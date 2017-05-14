@@ -43,7 +43,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Axes" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Axes" image="scatterplot" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="mZ6-dJ-XOs"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="mZ6-dJ-XOs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOE-l3-aZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +130,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
         <image name="list" width="32" height="32"/>
+        <image name="profile" width="32" height="32"/>
+        <image name="scatterplot" width="32" height="32"/>
     </resources>
 </document>

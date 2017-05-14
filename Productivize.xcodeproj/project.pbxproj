@@ -56,15 +56,47 @@
 		F469A6AA1EC91ED40018DFF4 /* Productivize */ = {
 			isa = PBXGroup;
 			children = (
-				F469A6AB1EC91ED40018DFF4 /* AppDelegate.swift */,
-				F469A6AD1EC91ED40018DFF4 /* FirstViewController.swift */,
-				F469A6AF1EC91ED40018DFF4 /* SecondViewController.swift */,
+				F469A6BF1EC91EF40018DFF4 /* Models */,
+				F469A6C01EC91EF90018DFF4 /* Views */,
+				F469A6C11EC91EFE0018DFF4 /* Controllers */,
+				F469A6C21EC91F030018DFF4 /* Others */,
 				F469A6B11EC91ED40018DFF4 /* Main.storyboard */,
 				F469A6B41EC91ED40018DFF4 /* Assets.xcassets */,
 				F469A6B61EC91ED40018DFF4 /* LaunchScreen.storyboard */,
 				F469A6B91EC91ED40018DFF4 /* Info.plist */,
 			);
 			path = Productivize;
+			sourceTree = "<group>";
+		};
+		F469A6BF1EC91EF40018DFF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F469A6C01EC91EF90018DFF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F469A6C11EC91EFE0018DFF4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F469A6AD1EC91ED40018DFF4 /* FirstViewController.swift */,
+				F469A6AF1EC91ED40018DFF4 /* SecondViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F469A6C21EC91F030018DFF4 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				F469A6AB1EC91ED40018DFF4 /* AppDelegate.swift */,
+			);
+			name = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

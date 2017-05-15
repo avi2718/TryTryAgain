@@ -16,8 +16,8 @@ struct Task: CustomStringConvertible {
     var category: String
     var length: TimeInterval
     var minChunk: TimeInterval
-    var urgency: Int = 250
-    var importance: Int = 250
+    var urgency = 0.5
+    var importance = 0.5
     
     init(name: String, dueDate: Date, category: String, length: TimeInterval, minChunk: TimeInterval) {
         self.name = name
@@ -28,6 +28,14 @@ struct Task: CustomStringConvertible {
         Task.allTasks.append(self)
     }
     
+    init() {
+        self.name = "Rando"
+        self.dueDate = Date.distantFuture
+        self.category = "Work"
+        self.length = TimeInterval(300)
+        self.minChunk = TimeInterval(200)
+        Task.allTasks.append(self)
+    }
     var description: String {
         return name
     }

@@ -16,6 +16,9 @@
 		F469A6C61EC92B460018DFF4 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6C51EC92B460018DFF4 /* NewTaskViewController.swift */; };
 		F469A6C81EC939B80018DFF4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6C71EC939B80018DFF4 /* Task.swift */; };
 		F469A6D71EC96A740018DFF4 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6D61EC96A740018DFF4 /* TaskView.swift */; };
+		F469A6D91EC97A720018DFF4 /* AxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6D81EC97A720018DFF4 /* AxisView.swift */; };
+		F469A6DB1EC97B2E0018DFF4 /* ImportanceLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6DA1EC97B2E0018DFF4 /* ImportanceLabelView.swift */; };
+		F469A6DD1EC97D070018DFF4 /* SFDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F469A6DC1EC97D070018DFF4 /* SFDisplay-Semibold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		F469A6C51EC92B460018DFF4 /* NewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		F469A6C71EC939B80018DFF4 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F469A6D61EC96A740018DFF4 /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		F469A6D81EC97A720018DFF4 /* AxisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxisView.swift; sourceTree = "<group>"; };
+		F469A6DA1EC97B2E0018DFF4 /* ImportanceLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportanceLabelView.swift; sourceTree = "<group>"; };
+		F469A6DC1EC97D070018DFF4 /* SFDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Semibold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 				F469A6B41EC91ED40018DFF4 /* Assets.xcassets */,
 				F469A6B61EC91ED40018DFF4 /* LaunchScreen.storyboard */,
 				F469A6B91EC91ED40018DFF4 /* Info.plist */,
+				F469A6DC1EC97D070018DFF4 /* SFDisplay-Semibold.otf */,
 			);
 			path = Productivize;
 			sourceTree = "<group>";
@@ -86,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				F469A6D61EC96A740018DFF4 /* TaskView.swift */,
+				F469A6D81EC97A720018DFF4 /* AxisView.swift */,
+				F469A6DA1EC97B2E0018DFF4 /* ImportanceLabelView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -167,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F469A6DD1EC97D070018DFF4 /* SFDisplay-Semibold.otf in Resources */,
 				F469A6B81EC91ED40018DFF4 /* LaunchScreen.storyboard in Resources */,
 				F469A6B51EC91ED40018DFF4 /* Assets.xcassets in Resources */,
 				F469A6B31EC91ED40018DFF4 /* Main.storyboard in Resources */,
@@ -181,8 +191,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F469A6D71EC96A740018DFF4 /* TaskView.swift in Sources */,
+				F469A6DB1EC97B2E0018DFF4 /* ImportanceLabelView.swift in Sources */,
 				F469A6B01EC91ED40018DFF4 /* SecondViewController.swift in Sources */,
 				F469A6AC1EC91ED40018DFF4 /* AppDelegate.swift in Sources */,
+				F469A6D91EC97A720018DFF4 /* AxisView.swift in Sources */,
 				F469A6C81EC939B80018DFF4 /* Task.swift in Sources */,
 				F469A6C61EC92B460018DFF4 /* NewTaskViewController.swift in Sources */,
 				F469A6AE1EC91ED40018DFF4 /* FirstViewController.swift in Sources */,

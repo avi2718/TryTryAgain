@@ -32,6 +32,7 @@ class NewTaskViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     @IBAction func dismissAdd(_ sender: Any) {
         let _ = Task(name: nameField.text!, dueDate: dueDate, category: category, length: taskLength, minChunk: minChunk)
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

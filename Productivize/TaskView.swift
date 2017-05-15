@@ -10,13 +10,16 @@ import UIKit
 
 class TaskView: UIView {
     var panGesture = UIPanGestureRecognizer()
+    var task: Task
     
-    override init (frame: CGRect) {
+    init (frame: CGRect, task: Task) {
+        self.task = task
         super.init(frame: frame)
         setup()
     }
     
     required init(coder aDecoder: NSCoder) {
+        self.task = Task()
         super.init(coder: aDecoder)!
         setup()
     }
@@ -30,9 +33,14 @@ class TaskView: UIView {
     }
     
     func viewDidDragged() {
+        let height = self.superview!.frame.height
+        let width = self.superview!.frame.width
+        
         let newPoint = panGesture.location(in: self.superview)
         let newFrame = CGRect(x: newPoint.x - frame.width/2, y: newPoint.y - frame.height/2, width: frame.width, height: frame.height)
         frame = newFrame
+        
+        
     }
     
 }

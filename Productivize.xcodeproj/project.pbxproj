@@ -15,7 +15,7 @@
 		F469A6B81EC91ED40018DFF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F469A6B61EC91ED40018DFF4 /* LaunchScreen.storyboard */; };
 		F469A6C61EC92B460018DFF4 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6C51EC92B460018DFF4 /* NewTaskViewController.swift */; };
 		F469A6C81EC939B80018DFF4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6C71EC939B80018DFF4 /* Task.swift */; };
-		F469A6D71EC96A740018DFF4 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6D61EC96A740018DFF4 /* DraggableView.swift */; };
+		F469A6D71EC96A740018DFF4 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6D61EC96A740018DFF4 /* TaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		F469A6B91EC91ED40018DFF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F469A6C51EC92B460018DFF4 /* NewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		F469A6C71EC939B80018DFF4 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		F469A6D61EC96A740018DFF4 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		F469A6D61EC96A740018DFF4 /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 		F469A6C01EC91EF90018DFF4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F469A6D61EC96A740018DFF4 /* DraggableView.swift */,
+				F469A6D61EC96A740018DFF4 /* TaskView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F469A6D71EC96A740018DFF4 /* DraggableView.swift in Sources */,
+				F469A6D71EC96A740018DFF4 /* TaskView.swift in Sources */,
 				F469A6B01EC91ED40018DFF4 /* SecondViewController.swift in Sources */,
 				F469A6AC1EC91ED40018DFF4 /* AppDelegate.swift in Sources */,
 				F469A6C81EC939B80018DFF4 /* Task.swift in Sources */,

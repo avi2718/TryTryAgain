@@ -13,7 +13,7 @@ class FirstViewController: UIViewController {
 
     @IBAction func buttonTapped(_ sender: Any) {
         let rect = CGRect(x: 150, y: 150, width: 10, height: 10)
-        let newView = DraggableView(frame: rect)
+        let newView = TaskView(frame: rect)
         self.view.addSubview(newView)
     }
     override func viewDidLoad() {

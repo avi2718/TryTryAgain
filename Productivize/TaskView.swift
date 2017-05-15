@@ -8,7 +8,8 @@
 
 import UIKit
 
-class DraggableView: UIView {
+class TaskView: UIView {
+    var panGesture = UIPanGestureRecognizer()
     
     override init (frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +25,14 @@ class DraggableView: UIView {
         backgroundColor = UIColor.cyan
         layer.cornerRadius = frame.size.width/2
         layer.masksToBounds = true
+        panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(viewDidDragged))
+        addGestureRecognizer(panGesture)
+    }
+    
+    func viewDidDragged() {
+        let newPoint = panGesture.location(in: self.superview)
+        let newFrame = CGRect(x: newPoint.x - frame.width/2, y: newPoint.y - frame.height/2, width: frame.width, height: frame.height)
+        frame = newFrame
     }
     
 }

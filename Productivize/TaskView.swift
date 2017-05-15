@@ -33,14 +33,9 @@ class TaskView: UIView {
     }
     
     func viewDidDragged() {
-        let height = self.superview!.frame.height
-        let width = self.superview!.frame.width
-        
         let newPoint = panGesture.location(in: self.superview)
         let newFrame = CGRect(x: newPoint.x - frame.width/2, y: newPoint.y - frame.height/2, width: frame.width, height: frame.height)
         frame = newFrame
-        
-        
     }
     
 }

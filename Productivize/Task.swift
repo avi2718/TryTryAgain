@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Task: CustomStringConvertible {
+class Task: CustomStringConvertible {
     
     static var allTasks: [Task] = []
     var name: String
@@ -36,6 +36,7 @@ struct Task: CustomStringConvertible {
         self.minChunk = TimeInterval(200)
         Task.allTasks.append(self)
     }
+    
     var description: String {
         return name
     }

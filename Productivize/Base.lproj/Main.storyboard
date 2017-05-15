@@ -318,7 +318,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Be-2f-gfe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Axes" image="scatterplot" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WNT-C4-p3i">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WNT-C4-p3i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

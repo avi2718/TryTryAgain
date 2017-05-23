@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F443C6DF1ED4F9D2006CC5FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443C6DE1ED4F9D2006CC5FC /* ProfileViewController.swift */; };
+		F443C6E31ED50006006CC5FC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443C6E21ED50006006CC5FC /* Profile.swift */; };
 		F469A6AC1EC91ED40018DFF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6AB1EC91ED40018DFF4 /* AppDelegate.swift */; };
 		F469A6AE1EC91ED40018DFF4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6AD1EC91ED40018DFF4 /* FirstViewController.swift */; };
 		F469A6B01EC91ED40018DFF4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469A6AF1EC91ED40018DFF4 /* SecondViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F443C6DE1ED4F9D2006CC5FC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F443C6E21ED50006006CC5FC /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F469A6A81EC91ED40018DFF4 /* Productivize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Productivize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F469A6AB1EC91ED40018DFF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F469A6AD1EC91ED40018DFF4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				F469A6C71EC939B80018DFF4 /* Task.swift */,
+				F443C6E21ED50006006CC5FC /* Profile.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 				F469A6AD1EC91ED40018DFF4 /* FirstViewController.swift */,
 				F469A6AF1EC91ED40018DFF4 /* SecondViewController.swift */,
 				F469A6C51EC92B460018DFF4 /* NewTaskViewController.swift */,
+				F443C6DE1ED4F9D2006CC5FC /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -191,11 +197,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F469A6D71EC96A740018DFF4 /* TaskView.swift in Sources */,
+				F443C6E31ED50006006CC5FC /* Profile.swift in Sources */,
 				F469A6DB1EC97B2E0018DFF4 /* ImportanceLabelView.swift in Sources */,
 				F469A6B01EC91ED40018DFF4 /* SecondViewController.swift in Sources */,
 				F469A6AC1EC91ED40018DFF4 /* AppDelegate.swift in Sources */,
 				F469A6D91EC97A720018DFF4 /* AxisView.swift in Sources */,
 				F469A6C81EC939B80018DFF4 /* Task.swift in Sources */,
+				F443C6DF1ED4F9D2006CC5FC /* ProfileViewController.swift in Sources */,
 				F469A6C61EC92B460018DFF4 /* NewTaskViewController.swift in Sources */,
 				F469A6AE1EC91ED40018DFF4 /* FirstViewController.swift in Sources */,
 			);

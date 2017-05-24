@@ -14,20 +14,19 @@ class ProfileViewController: UIViewController {
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var breakFreqField: UITextField!
     @IBOutlet var breakLengthField: UITextField!
-    @IBOutlet var breakActField: UITextField!
+    @IBOutlet var breakActField: UITextView!
     
-    var breakFreq: TimeInterval = 25.0
-    var breakLength: TimeInterval = 25.0
-    var breakAct: String = " "
+    var profile: Profile?
+    var breakFreq: TimeInterval = 1500
+    var breakLength: TimeInterval = 300
+    var breakAct: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setInputViews()
-
-        // Do any additional setup after loading the view.
+        setup()
     }
     
-    func setInputViews() {
+    func setup() {
         let freqPicker: UIDatePicker = UIDatePicker()
         freqPicker.datePickerMode = UIDatePickerMode.countDownTimer
         breakFreqField.inputView = freqPicker
@@ -35,22 +34,21 @@ class ProfileViewController: UIViewController {
         let lengthPicker: UIDatePicker = UIDatePicker()
         lengthPicker.datePickerMode = UIDatePickerMode.countDownTimer
         breakFreqField.inputView = freqPicker
+        
+        breakFreq = profile!.breakFreq
+        breakLength = profile!.breakLength
+        if let a = profile!.breakAct {
+            breakAct = a
+        } else {
+            breakAct = "Enter Activities Here"
+        }
+        
+        breakActField.text = breakAct
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

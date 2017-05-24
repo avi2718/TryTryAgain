@@ -25,6 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         thing2.importance = 0.4
         
         var _ = Task()
+        
+        var profile = Profile()
+        let tabBarController = self.window?.rootViewController as! UITabBarController
+        let profileViewController = tabBarController.viewControllers?[2] as! ProfileViewController
+        profileViewController.profile = profile
+        
         return true
     }
 

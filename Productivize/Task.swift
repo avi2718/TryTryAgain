@@ -15,16 +15,14 @@ class Task: CustomStringConvertible {
     var dueDate: Date
     var category: String
     var length: TimeInterval
-    var minChunk: TimeInterval
     var urgency = 0.5
     var importance = 0.5
     
-    init(name: String, dueDate: Date, category: String, length: TimeInterval, minChunk: TimeInterval) {
+    init(name: String, dueDate: Date, category: String, length: TimeInterval) {
         self.name = name
         self.dueDate = dueDate
         self.category = category
         self.length = length
-        self.minChunk = minChunk
         Task.allTasks.append(self)
     }
     
@@ -33,7 +31,6 @@ class Task: CustomStringConvertible {
         self.dueDate = Date.distantFuture
         self.category = "Work"
         self.length = TimeInterval(300)
-        self.minChunk = TimeInterval(200)
         Task.allTasks.append(self)
     }
     

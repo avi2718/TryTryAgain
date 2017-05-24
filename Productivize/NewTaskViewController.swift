@@ -14,9 +14,6 @@ class NewTaskViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet var dateField: UITextField!
     @IBOutlet var categoryField: UITextField!
     @IBOutlet var lengthField: UITextField!
-    @IBOutlet var minChunkField: UITextField!
-    @IBOutlet var completionSlider: UISlider!
-    @IBOutlet var remainderField: UILabel!
     
     var categories = ["Work", "Wellness"]
     
@@ -31,7 +28,7 @@ class NewTaskViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     @IBAction func dismissAdd(_ sender: Any) {
-        let _ = Task(name: nameField.text!, dueDate: dueDate, category: category, length: taskLength, minChunk: minChunk)
+        let _ = Task(name: nameField.text!, dueDate: dueDate, category: category, length: taskLength)
         dismiss(animated: true, completion: nil)
     }
     
@@ -58,12 +55,6 @@ class NewTaskViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let lengthPicker = UIDatePicker()
         lengthPicker.datePickerMode = UIDatePickerMode.countDownTimer
         lengthField.inputView = lengthPicker
-        
-        let minChunkPicker = UIDatePicker()
-        minChunkPicker.datePickerMode = UIDatePickerMode.countDownTimer
-        minChunkField.inputView = minChunkPicker
-        
-        completionSlider.value = 0.0
     }
     
     @IBAction func dateTapped(_ sender: UITextField) {
@@ -109,16 +100,6 @@ class NewTaskViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return "\(hours) hours \(minutes) minutes"
     }
     
-    @IBAction func chunkTapped(_ sender: UITextField) {
-        let myTimePicker = sender.inputView as! UIDatePicker
-        minChunk = myTimePicker.countDownDuration
-        minChunkField.text = stringFromTimeInterval(interval: minChunk)
-    }
-    @IBAction func sliderSlid(_ sender: UISlider) {
-        var timeLeftString = "Time Left: "
-        timeLeftString += stringFromTimeInterval(interval: (taskLength * Double(1-sender.value)))
-        remainderField.text = timeLeftString
-    }
 
     /*
     // MARK: - Navigation

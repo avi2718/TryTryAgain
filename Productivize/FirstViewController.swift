@@ -17,12 +17,6 @@ class FirstViewController: UIViewController {
         self.view.addSubview(newView)
     }
     
-    func newTask() {
-        let rect = CGRect(x: 150, y: 150, width: 10, height: 10)
-        let newView = TaskView(frame: rect, task: Task())
-        self.view.addSubview(newView)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

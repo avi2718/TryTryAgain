@@ -108,10 +108,12 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func pauseButtonTapped(_ sender: UIButton) {
         if self.resumeTapped == false {
             timer.invalidate()
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["taskOver"])
             resumeTapped = true
             pauseButton.setTitle("Resume",for: .normal)
         } else {
             runTimer()
+            sendNotification(time: TimeInterval(Double(seconds)))
             resumeTapped = false
             pauseButton.setTitle("Pause",for: .normal)
         }
@@ -119,7 +121,10 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         timer.invalidate()
-        seconds = 60
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["taskOver"])
+        if let a = taskList?[0].length {
+            seconds = Int(a)
+        }
         timerLabel.text = timeString(time: TimeInterval(seconds))
         
         isTimerRunning = false

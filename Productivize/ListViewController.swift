@@ -34,20 +34,22 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         sendNotification(time: TimeInterval(5))
         
         taskList = Task.allTasks
-        
+        if let a = taskList?[0].length {
+            seconds = Int(a)
+        }
+        sendNotification(time: TimeInterval(Double(seconds)))
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
+        pauseButton.isEnabled = false
         if taskList!.count > 0 {
             return
         }
-        
-        pauseButton.isEnabled = false
     }
     
     
-    
+
     //MARK: TABLE VIEW
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

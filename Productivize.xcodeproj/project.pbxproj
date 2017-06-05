@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E01DF0D11EDF33FD00373E3A /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DF0D01EDF33FD00373E3A /* EditView.swift */; };
+		E0838EFE1EDEA5B600D8EA38 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0838EFD1EDEA5B600D8EA38 /* DetailViewController.swift */; };
 		F443C6DF1ED4F9D2006CC5FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443C6DE1ED4F9D2006CC5FC /* ProfileViewController.swift */; };
 		F443C6E31ED50006006CC5FC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443C6E21ED50006006CC5FC /* Profile.swift */; };
 		F443C70D1ED5E693006CC5FC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443C70C1ED5E693006CC5FC /* ListViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E01DF0D01EDF33FD00373E3A /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		E0838EFD1EDEA5B600D8EA38 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
 		F443C6DE1ED4F9D2006CC5FC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F443C6E21ED50006006CC5FC /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F443C70C1ED5E693006CC5FC /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				F469A6D61EC96A740018DFF4 /* TaskView.swift */,
+				E01DF0D01EDF33FD00373E3A /* EditView.swift */,
 				F469A6D81EC97A720018DFF4 /* AxisView.swift */,
 				F469A6DA1EC97B2E0018DFF4 /* ImportanceLabelView.swift */,
 			);
@@ -109,6 +114,7 @@
 		F469A6C11EC91EFE0018DFF4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E0838EFD1EDEA5B600D8EA38 /* DetailViewController.swift */,
 				F469A6AD1EC91ED40018DFF4 /* FirstViewController.swift */,
 				F469A6AF1EC91ED40018DFF4 /* SecondViewController.swift */,
 				F443C70C1ED5E693006CC5FC /* ListViewController.swift */,
@@ -202,9 +208,11 @@
 				F469A6D71EC96A740018DFF4 /* TaskView.swift in Sources */,
 				F443C6E31ED50006006CC5FC /* Profile.swift in Sources */,
 				F469A6DB1EC97B2E0018DFF4 /* ImportanceLabelView.swift in Sources */,
+				E0838EFE1EDEA5B600D8EA38 /* DetailViewController.swift in Sources */,
 				F469A6B01EC91ED40018DFF4 /* SecondViewController.swift in Sources */,
 				F469A6AC1EC91ED40018DFF4 /* AppDelegate.swift in Sources */,
 				F443C70D1ED5E693006CC5FC /* ListViewController.swift in Sources */,
+				E01DF0D11EDF33FD00373E3A /* EditView.swift in Sources */,
 				F469A6D91EC97A720018DFF4 /* AxisView.swift in Sources */,
 				F469A6C81EC939B80018DFF4 /* Task.swift in Sources */,
 				F443C6DF1ED4F9D2006CC5FC /* ProfileViewController.swift in Sources */,

@@ -10,7 +10,9 @@ import UIKit
 
 class TaskView: UIView {
     var panGesture = UIPanGestureRecognizer()
+    var selectedGesture = UILongPressGestureRecognizer()
     var task: Task
+    var detailViewController = DetailViewController()
     
     init (frame: CGRect, task: Task) {
         self.task = task
@@ -25,11 +27,17 @@ class TaskView: UIView {
     }
     
     func setup () {
-        backgroundColor = UIColor.cyan
+        if task.category == "Work" {
+            backgroundColor = UIColor.red
+        } else {
+            backgroundColor = UIColor.blue
+        }
         layer.cornerRadius = frame.size.width/2
         layer.masksToBounds = true
         panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(viewDidDragged))
         addGestureRecognizer(panGesture)
+        selectedGesture = UILongPressGestureRecognizer.init(target: self, action: #selector(viewDidSelected))
+        addGestureRecognizer(selectedGesture)
     }
     
     func viewDidDragged() {
@@ -43,6 +51,20 @@ class TaskView: UIView {
         let y: Double = Double((height  - newPoint.y) / height)
         task.importance = x
         task.urgency = y
+    }
+    
+    func viewDidSelected() {
+        print("\(task.name)")
+        
+        /*let detailVC = DetailViewController()
+        detailVC.nameTextField?.text = "\(task.name)"
+        detailVC.dateTextField?.text = "\(task.dueDate)"
+        detailVC.categoryTextField?.text = "\(task.category)"
+        detailVC.taskLengthTextField?.text = "\(task.length)"
+        
+        detailVC.minChunkTextField?.text = ""
+        detailVC.completionSlider?.value = 0.5
+        detailViewController = detailVC*/
     }
     
 }

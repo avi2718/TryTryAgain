@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController {
         if let a = profile!.breakAct {
             breakAct = a
         } else {
-            breakAct = "Enter Activities Here"
+            breakAct = "Click to Edit"
         }
         
         breakActField.text = breakAct

@@ -30,7 +30,7 @@ class Task: CustomStringConvertible {
         self.name = "Rando"
         self.dueDate = Date.distantFuture
         self.category = "Work"
-        self.length = TimeInterval(300)
+        self.length = TimeInterval(3)
         Task.allTasks.append(self)
     }
     

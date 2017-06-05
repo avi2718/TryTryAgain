@@ -21,6 +21,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var seconds = 5
     var timer = Timer()
+    var taskNumber = 0
     var isTimerRunning = false
     
     var resumeTapped = false
@@ -85,7 +86,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func updateTimer() {
         if seconds < 1 {
             timer.invalidate()
-            makeAlert()
+            taskCompletedAlert()
         } else {
             seconds -= 1
             timerLabel.text = timeString(time: TimeInterval(seconds))
@@ -159,16 +160,42 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         UNUserNotificationCenter.current().setNotificationCategories([taskCompleted])
     }
     
-    func makeAlert() {
+    func taskCompletedAlert() {
         let alert = UIAlertController(
             title: "Time's up!",
             message: "It's time to start working on your next task.",
             preferredStyle: .alert)
-        let updatePreviousAction = UIAlertAction(title: "Update Previous", style: .default, handler: nil)
+        let updatePreviousAction = UIAlertAction(title: "Update Previous", style: .default, handler: {(action:UIAlertAction!) in self.updateScreen()})
         alert.addAction(updatePreviousAction)
-        let nextTaskAction = UIAlertAction(title: "Next Task", style: .default, handler: nil)
+        let nextTaskAction = UIAlertAction(title: "Next Task", style: .default, handler: {(action:UIAlertAction!) in self.nextTask()})
         alert.addAction(nextTaskAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func listCompletedAlert() {
+        let alert = UIAlertController(
+            title: "You're done!",
+            message: "You've finished working for the length of time you wanted to.",
+            preferredStyle: .alert)
+        let updatePreviousAction = UIAlertAction(title: "Update Previous", style: .default, handler: {(action:UIAlertAction!) in self.updateScreen()})
+        alert.addAction(updatePreviousAction)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func updateScreen() {
+        print("update screen should now pop up")
+    }
+    
+    func nextTask() {
+        taskNumber += 1
+        if taskNumber < (taskList?.count)! {
+            seconds = Int((taskList?[taskNumber].length)!)
+            runTimer()
+        } else {
+            listCompletedAlert()
+        }
     }
 
 }

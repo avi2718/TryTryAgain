@@ -75,7 +75,19 @@ class AxisView: UIView {
     func drawTasks(_ rect: CGRect) {
         let width = Double(self.frame.width)
         let height = Double(self.frame.height)
+        print("\(Task.allTasks)")
         for task in Task.allTasks {
+            
+            let nameString: NSString = "\(task.name)" as NSString
+            let fieldColor: UIColor = UIColor.black
+            let fieldFont = UIFont(name: "SFUIDisplay-Semibold", size: 9)
+            let attributes: [String: Any] = [
+                NSForegroundColorAttributeName: fieldColor,
+                NSFontAttributeName: fieldFont!,
+                NSKernAttributeName: 1.3
+            ]
+            nameString.draw(in: CGRect(x: task.urgency * width, y: task.importance * height + 10, width: 80, height: 40), withAttributes: attributes)
+            
             let rect = CGRect(x: task.urgency * width, y: task.importance * height, width: 10, height: 10)
             let newView = TaskView(frame: rect, task: task)
             self.addSubview(newView)

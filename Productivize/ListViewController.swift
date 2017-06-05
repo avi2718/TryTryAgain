@@ -43,6 +43,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         pauseButton.isEnabled = false
+        resetButton.isEnabled = false
         if taskList!.count > 0 {
             return
         }
@@ -61,12 +62,15 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell",
-                                                 for: indexPath as IndexPath)
+        var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell?
+        if (cell != nil) {
+            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cell")
+        }
         
         let item = taskList![indexPath.row]
-        cell.textLabel?.text = item.name
-        return cell
+        cell?.textLabel?.text = item.name
+        cell?.detailTextLabel?.text = timeString(time: item.length)
+        return cell!
     }
     
     

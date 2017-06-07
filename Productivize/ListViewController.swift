@@ -22,6 +22,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var seconds = 5
     var timer = Timer()
     var taskNumber = 0
+    var isLastTask = false
     var isTimerRunning = false
     
     var resumeTapped = false
@@ -190,7 +191,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func nextTask() {
         taskNumber += 1
-        if taskNumber < (taskList?.count)! {
+        if taskNumber < (taskList?.count)! - 1 {
             seconds = Int((taskList?[taskNumber].length)!)
             runTimer()
         } else {

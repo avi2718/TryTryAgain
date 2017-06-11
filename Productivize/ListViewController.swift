@@ -162,27 +162,27 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func taskCompletedAlert() {
-        let alert = UIAlertController(
-            title: "Time's up!",
-            message: "It's time to start working on your next task.",
-            preferredStyle: .alert)
-        let updatePreviousAction = UIAlertAction(title: "Update Previous", style: .default, handler: {(action:UIAlertAction!) in self.updateScreen()})
-        alert.addAction(updatePreviousAction)
-        let nextTaskAction = UIAlertAction(title: "Next Task", style: .default, handler: {(action:UIAlertAction!) in self.nextTask()})
-        alert.addAction(nextTaskAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func listCompletedAlert() {
-        let alert = UIAlertController(
-            title: "You're done!",
-            message: "You've finished working for the length of time you wanted to.",
-            preferredStyle: .alert)
-        let updatePreviousAction = UIAlertAction(title: "Update Previous", style: .default, handler: {(action:UIAlertAction!) in self.updateScreen()})
-        alert.addAction(updatePreviousAction)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
+        if isLastTask {
+            let alert = UIAlertController(
+                title: "You're done!",
+                message: "You've finished working for the length of time you wanted to.",
+                preferredStyle: .alert)
+            let updatePreviousAction = UIAlertAction(title: "Update Previous", style: .default, handler: {(action:UIAlertAction!) in self.updateScreen()})
+            alert.addAction(updatePreviousAction)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(
+                title: "Time's up!",
+                message: "It's time to start working on your next task.",
+                preferredStyle: .alert)
+            let updatePreviousAction = UIAlertAction(title: "Update Previous", style: .default, handler: {(action:UIAlertAction!) in self.updateScreen()})
+            alert.addAction(updatePreviousAction)
+            let nextTaskAction = UIAlertAction(title: "Next Task", style: .default, handler: {(action:UIAlertAction!) in self.nextTask()})
+            alert.addAction(nextTaskAction)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     func updateScreen() {
@@ -191,11 +191,14 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func nextTask() {
         taskNumber += 1
-        if taskNumber < (taskList?.count)! - 1 {
-            seconds = Int((taskList?[taskNumber].length)!)
+        if taskNumber == taskList!.count - 1 {
+            isLastTask = true
+        }
+        seconds = Int((taskList?[taskNumber].length)!)
+        if let myCell = tableView.cellForRow(at: IndexPath(row: taskNumber, section: 1)) {
+            print("yesitworked")
+            myCell.backgroundColor = UIColor.red
             runTimer()
-        } else {
-            listCompletedAlert()
         }
     }
 

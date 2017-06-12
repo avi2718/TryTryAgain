@@ -56,6 +56,7 @@ class TaskView: UIView {
     func viewDidSelected() {
         print("\(task.name)")
         
+        task.current = true
         /*let detailVC = DetailViewController()
         detailVC.nameTextField?.text = "\(task.name)"
         detailVC.dateTextField?.text = "\(task.dueDate)"

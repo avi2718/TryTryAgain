@@ -9,6 +9,8 @@
 import UIKit
 
 class AxisView: UIView {
+    var numberTracker: Int = 1
+    var taskViewArray: [UIView] = []
 
     override func draw(_ rect: CGRect) {
         drawAxes(rect)
@@ -72,8 +74,13 @@ class AxisView: UIView {
     }
     
     func drawTasks(_ rect: CGRect) {
+        for tv in taskViewArray {
+            tv.removeFromSuperview()
+        }
         let width = Double(self.frame.width)
         let height = Double(self.frame.height)
+        print("Axis View drew its tasks for the \(numberTracker) time")
+        numberTracker += 1
         print("\(Task.allTasks)")
         for task in Task.allTasks {
             //CREATES NAME LABEL
@@ -91,6 +98,10 @@ class AxisView: UIView {
             let newView = TaskView(frame: rect, task: task)
             self.addSubview(newView)
             newView.nameLabel = nl
+            
+            //APPENDS TO VIEWARRAY
+            taskViewArray.append(newView as UIView)
+            taskViewArray.append(nl as UIView)
         }
     }
 }

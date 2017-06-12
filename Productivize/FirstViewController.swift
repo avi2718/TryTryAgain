@@ -10,6 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController {
     @IBOutlet var button: UIButton!
+    @IBOutlet var axis: UIView!
 
     @IBAction func buttonTapped(_ sender: Any) {
         let rect = CGRect(x: 150, y: 150, width: 10, height: 10)
@@ -20,6 +21,11 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        axis.setNeedsDisplay()
     }
 
     override func didReceiveMemoryWarning() {

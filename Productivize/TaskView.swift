@@ -10,7 +10,7 @@ import UIKit
 
 class TaskView: UIView {
     var panGesture = UIPanGestureRecognizer()
-    var selectedGesture = UILongPressGestureRecognizer()
+    var doubleTap = UITapGestureRecognizer()
     var task: Task
     var detailViewController = DetailViewController()
     var nameLabel: UILabel?
@@ -39,8 +39,8 @@ class TaskView: UIView {
         //ADDS GESTURE RECOGNIZERS
         panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(viewDidDragged))
         addGestureRecognizer(panGesture)
-        selectedGesture = UILongPressGestureRecognizer.init(target: self, action: #selector(viewDidSelected))
-        addGestureRecognizer(selectedGesture)
+        doubleTap = UITapGestureRecognizer.init(target: self, action: #selector(viewDidTapped))
+         doubleTap.delaysTouchesBegan = true
     }
     
     func viewDidDragged() {
@@ -52,9 +52,10 @@ class TaskView: UIView {
         let width = self.superview!.frame.width
         let height = self.superview!.frame.height
         let x: Double = Double(newPoint.x / width)
-        let y: Double = Double((height  - newPoint.y) / height)
-        task.importance = x
-        task.urgency = y
+        //let y: Double = Double((height  - newPoint.y) / height)
+        let y: Double = Double(newPoint.y / height)
+        task.importance = y
+        task.urgency = x
         
         //MOVES NAMELABEL
         let newNameFrame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y - 5, width: 80, height: 40)
@@ -62,7 +63,7 @@ class TaskView: UIView {
     }
     
     
-    func viewDidSelected() {
+    func viewDidTapped() {
         print("\(task.name)")
         
         /*let detailVC = DetailViewController()

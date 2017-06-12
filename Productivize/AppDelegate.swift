@@ -16,15 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        var thing1 = Task()
+        let thing1 = Task()
         thing1.urgency = 0.75
         thing1.importance = 0.3
+        thing1.name = "Random 1"
         
-        var thing2 = Task()
+        let thing2 = Task()
         thing2.urgency = 0.3
         thing2.importance = 0.4
+        thing2.name = "Random 2"
         
-        var _ = Task()
+        let thing3 = Task()
+        thing3.name = "Random 3"
         
         var profile = Profile()
         let tabBarController = self.window?.rootViewController as! UITabBarController

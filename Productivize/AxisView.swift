@@ -10,7 +10,6 @@ import UIKit
 
 class AxisView: UIView {
 
-
     override func draw(_ rect: CGRect) {
         drawAxes(rect)
         drawTriangles(rect)
@@ -77,20 +76,21 @@ class AxisView: UIView {
         let height = Double(self.frame.height)
         print("\(Task.allTasks)")
         for task in Task.allTasks {
-            
-            let nameString: NSString = "\(task.name)" as NSString
-            let fieldColor: UIColor = UIColor.black
-            let fieldFont = UIFont(name: "SFUIDisplay-Semibold", size: 9)
+            //CREATES NAME LABEL
+            let nl = UILabel(frame: CGRect(x: task.urgency * width, y: task.importance * height - 5, width: 80, height: 40))
+            let nameString = task.name
             let attributes: [String: Any] = [
-                NSForegroundColorAttributeName: fieldColor,
-                NSFontAttributeName: fieldFont!,
-                NSKernAttributeName: 1.3
+                NSForegroundColorAttributeName: UIColor.black,
+                NSFontAttributeName: UIFont(name: "SFUIDisplay-Semibold", size: 9)!,
             ]
-            nameString.draw(in: CGRect(x: task.urgency * width, y: task.importance * height + 10, width: 80, height: 40), withAttributes: attributes)
+            nl.attributedText = NSAttributedString(string: nameString, attributes: attributes)
+            self.addSubview(nl)
             
+            //CREATES TASKVIEW
             let rect = CGRect(x: task.urgency * width, y: task.importance * height, width: 10, height: 10)
             let newView = TaskView(frame: rect, task: task)
             self.addSubview(newView)
+            newView.nameLabel = nl
         }
     }
 }

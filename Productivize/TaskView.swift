@@ -13,6 +13,7 @@ class TaskView: UIView {
     var selectedGesture = UILongPressGestureRecognizer()
     var task: Task
     var detailViewController = DetailViewController()
+    var nameLabel: UILabel?
     
     init (frame: CGRect, task: Task) {
         self.task = task
@@ -34,6 +35,8 @@ class TaskView: UIView {
         }
         layer.cornerRadius = frame.size.width/2
         layer.masksToBounds = true
+        
+        //ADDS GESTURE RECOGNIZERS
         panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(viewDidDragged))
         addGestureRecognizer(panGesture)
         selectedGesture = UILongPressGestureRecognizer.init(target: self, action: #selector(viewDidSelected))
@@ -41,6 +44,7 @@ class TaskView: UIView {
     }
     
     func viewDidDragged() {
+        //MOVES TASK VIEW
         let newPoint = panGesture.location(in: self.superview)
         let newFrame = CGRect(x: newPoint.x - frame.width/2, y: newPoint.y - frame.height/2, width: frame.width, height: frame.height)
         frame = newFrame
@@ -51,7 +55,12 @@ class TaskView: UIView {
         let y: Double = Double((height  - newPoint.y) / height)
         task.importance = x
         task.urgency = y
+        
+        //MOVES NAMELABEL
+        let newNameFrame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y - 5, width: 80, height: 40)
+        nameLabel?.frame = newNameFrame
     }
+    
     
     func viewDidSelected() {
         print("\(task.name)")

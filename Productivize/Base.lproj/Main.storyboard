@@ -47,6 +47,13 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tdI-eT-ZLc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="zRe-nE-eaQ">
+                            <connections>
+                                <segue destination="wCU-yx-k66" kind="popoverPresentation" popoverAnchorBarButtonItem="zRe-nE-eaQ" id="8Gw-4T-BOB">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gvf-1D-Ynn">
                             <connections>
                                 <segue destination="WEf-80-Ic3" kind="popoverPresentation" popoverAnchorBarButtonItem="Gvf-1D-Ynn" id="QKM-Dc-JHC">
@@ -59,7 +66,6 @@
                     <connections>
                         <outlet property="axis" destination="1zH-ZZ-PEw" id="e7w-LD-kyZ"/>
                         <outlet property="button" destination="nn6-ki-ksh" id="LdV-6I-lNK"/>
-                        <segue destination="wCU-yx-k66" kind="show" id="A1d-1D-Dzy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -512,10 +518,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q9E-b9-Diq">
-                                <rect key="frame" x="16" y="64" width="343" height="559"/>
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSD-zS-9MP">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                        <items>
+                                            <navigationItem title="Edit Task" id="3Y9-LL-wBR">
+                                                <barButtonItem key="leftBarButtonItem" title="Cancel" systemItem="cancel" id="ifI-eX-ETV">
+                                                    <connections>
+                                                        <action selector="dismissCancel:" destination="wCU-yx-k66" id="4Um-a0-Qwm"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" systemItem="done" id="Y8G-HA-DEx">
+                                                    <connections>
+                                                        <action selector="dismissDone:" destination="wCU-yx-k66" id="Q7O-oK-1cO"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Je8-bK-lsn">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="54" width="343" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lO-92-uG5">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
@@ -532,7 +555,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="P6d-dq-TtI">
-                                        <rect key="frame" x="0.0" y="40" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="94" width="343" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ai1-Co-Bnr">
                                                 <rect key="frame" x="0.0" y="0.0" width="76" height="30"/>
@@ -549,7 +572,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Y25-mJ-uGD">
-                                        <rect key="frame" x="0.0" y="80" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="134" width="343" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBu-IZ-OTc">
                                                 <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
@@ -566,7 +589,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IRP-Uq-iJE">
-                                        <rect key="frame" x="0.0" y="120" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="174" width="343" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Length: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOm-OJ-W3W">
                                                 <rect key="frame" x="0.0" y="0.0" width="102.5" height="30"/>
@@ -583,7 +606,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rln-o6-LbF">
-                                        <rect key="frame" x="0.0" y="160" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="214" width="343" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum Chunk: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCX-k3-yiu">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="30"/>
@@ -600,7 +623,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TrA-Af-RAz">
-                                        <rect key="frame" x="0.0" y="200" width="343" height="359"/>
+                                        <rect key="frame" x="0.0" y="254" width="343" height="393"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxs-rk-mqe">
                                                 <rect key="frame" x="0.0" y="0.0" width="169" height="20.5"/>

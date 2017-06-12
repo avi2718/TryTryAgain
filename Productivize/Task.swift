@@ -17,12 +17,14 @@ class Task: CustomStringConvertible {
     var length: TimeInterval
     var urgency = 0.5
     var importance = 0.5
+    var current : Bool
     
     init(name: String, dueDate: Date, category: String, length: TimeInterval) {
         self.name = name
         self.dueDate = dueDate
         self.category = category
         self.length = length
+        self.current = false
         Task.allTasks.append(self)
     }
     
@@ -31,6 +33,8 @@ class Task: CustomStringConvertible {
         self.dueDate = Date.distantFuture
         self.category = "Work"
         self.length = TimeInterval(3)
+        self.current = false
+
         Task.allTasks.append(self)
     }
     
